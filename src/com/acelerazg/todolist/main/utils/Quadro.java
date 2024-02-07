@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Quadro {
     Scanner teclado = new Scanner(System.in);
     List<Tarefa> listaDeTarefas = new ArrayList<>();
+    Tarefa tarefa = new Tarefa();
     public void adicionarTarefa(){
         System.out.println("Qual o nome da tarefa?");
         teclado.nextLine();
@@ -45,6 +46,10 @@ public class Quadro {
         listaDeTarefas.add(new Tarefa(nome, nivelDePrioridade, status, categoria, descricao, dataDeTermino));
     }
     public void listarTarefas(){
+        System.out.println(listaDeTarefas);
+    }
+    public void listarTarefasPorPrioridade(){
+        listaDeTarefas.sort(tarefa);
         System.out.println(listaDeTarefas);
     }
 
