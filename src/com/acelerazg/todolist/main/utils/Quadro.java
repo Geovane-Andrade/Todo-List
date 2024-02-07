@@ -11,22 +11,42 @@ public class Quadro {
     Scanner teclado = new Scanner(System.in);
     List<Tarefa> listaDeTarefas = new ArrayList<>();
     Tarefa tarefa = new Tarefa();
-    public void adicionarTarefa(){
-        System.out.println("Qual o nome da tarefa?");
+
+    public void adicionarTarefa() {
+        System.out.println("Qual o nome da nova tarefa?");
         teclado.nextLine();
         String nome = teclado.nextLine();
         System.out.println("----------------------------");
-        System.out.println("Qual o status da tarefa?" +
-                "[Todo](À fazer)" +
-                "[Doing](Fazendo)" +
+        System.out.println("Qual o status da tarefa?\n" +
+                "[Todo](À fazer)\n" +
+                "[Doing](Fazendo)\n" +
                 "[Done](Feito)");
         String status = teclado.nextLine();
-        while (!status.equalsIgnoreCase("Todo") || !status.equalsIgnoreCase("Doing")
-                || !status.equalsIgnoreCase("Done")) {
-            System.out.println("Valor inválido, digite todo, doing ou done.");
-            teclado.nextLine();
-            status = teclado.nextLine();
-            System.out.println("----------------------------");
+        boolean resposta = true;
+        while(resposta){
+            switch (status.toLowerCase()) {
+                case "todo": {
+                    status = "Todo";
+                    resposta = false;
+                    break;
+                }
+                case "doing": {
+                    status = "Doing";
+                    resposta = false;
+                    break;
+                }
+                case "done": {
+                    status = "Done";
+                    resposta = false;
+                    break;
+                }
+                default: {
+                    System.out.println("Valor inválido, digite todo, doing ou done.");
+                    status = teclado.nextLine();
+                    break;
+                }
+            }
+
         }
         System.out.println("----------------------------");
         System.out.println("Qual a categoria da tarefa?");
@@ -48,15 +68,19 @@ public class Quadro {
         }
         listaDeTarefas.add(new Tarefa(nome, nivelDePrioridade, status, categoria, descricao, dataDeTermino));
     }
-    public void listarTarefas(){
+
+
+    public void listarTarefas() {
         System.out.println(listaDeTarefas);
     }
-    public void listarTarefasPorPrioridade(){
+
+    public void listarTarefasPorPrioridade() {
         listaDeTarefas.sort(tarefa);
         System.out.println(listaDeTarefas);
     }
-    public void removerTarefaPorNome(){
-        System.out.println("Qual o nome da tarefa?");
+
+    public void removerTarefaPorNome() {
+        System.out.println("Qual o nome da tarefa a ser alterada?");
         teclado.nextLine();
         String tarefaParaRemover = teclado.nextLine();
         List<Tarefa> listaTarefasParaRemover = listaDeTarefas
@@ -64,14 +88,15 @@ public class Quadro {
                 .filter((t) -> t.getNome().equals(tarefaParaRemover))
                 .collect(Collectors.toList());
         listaDeTarefas.removeAll(listaTarefasParaRemover);
-        System.out.println("Todas as tarefas de nome: " + tarefaParaRemover + " foram removidas!");
+        System.out.println("Lista de tarefas alterada com sucesso!");
     }
 
-    public void atualizarTarefaPorNome(){
-        quadro.removerTarefaPorNome();
-        quadro.adicionarTarefa();
+    public void atualizarTarefaPorNome() {
+        removerTarefaPorNome();
+        adicionarTarefa();
         System.out.println("Tarefa atualizada com sucesso!");
 
     }
 
 }
+
