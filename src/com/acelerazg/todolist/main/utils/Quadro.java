@@ -3,6 +3,7 @@ package com.acelerazg.todolist.main.utils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Quadro {
     Scanner teclado = new Scanner(System.in);
@@ -51,6 +52,17 @@ public class Quadro {
     public void listarTarefasPorPrioridade(){
         listaDeTarefas.sort(tarefa);
         System.out.println(listaDeTarefas);
+    }
+    public void removerTarefaPorNome(){
+        System.out.println("Qual o nome da tarefa que deseja remover?(Todas as tarefas de mesmo nome serão removidas!");
+        teclado.nextLine();
+        String tarefaParaRemover = teclado.nextLine();
+        List<Tarefa> listaTarefasParaRemover = listaDeTarefas
+                .stream()
+                .filter((t) -> t.getNome().equals(tarefaParaRemover))
+                .collect(Collectors.toList());
+        listaDeTarefas.removeAll(listaTarefasParaRemover);
+        System.out.println("Todas as tarefas de nome: " + tarefaParaRemover + " foram removidas!");
     }
 
 }
