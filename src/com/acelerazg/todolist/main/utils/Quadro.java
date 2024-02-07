@@ -6,6 +6,8 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Quadro {
+
+    Quadro quadro;
     Scanner teclado = new Scanner(System.in);
     List<Tarefa> listaDeTarefas = new ArrayList<>();
     Tarefa tarefa = new Tarefa();
@@ -54,7 +56,7 @@ public class Quadro {
         System.out.println(listaDeTarefas);
     }
     public void removerTarefaPorNome(){
-        System.out.println("Qual o nome da tarefa que deseja remover?(Todas as tarefas de mesmo nome serão removidas!");
+        System.out.println("Qual o nome da tarefa?");
         teclado.nextLine();
         String tarefaParaRemover = teclado.nextLine();
         List<Tarefa> listaTarefasParaRemover = listaDeTarefas
@@ -63,6 +65,13 @@ public class Quadro {
                 .collect(Collectors.toList());
         listaDeTarefas.removeAll(listaTarefasParaRemover);
         System.out.println("Todas as tarefas de nome: " + tarefaParaRemover + " foram removidas!");
+    }
+
+    public void atualizarTarefaPorNome(){
+        quadro.removerTarefaPorNome();
+        quadro.adicionarTarefa();
+        System.out.println("Tarefa atualizada com sucesso!");
+
     }
 
 }
