@@ -44,6 +44,8 @@ public class Quadro {
         }
         listaDeTarefas.add(new Tarefa(nome, nivelDePrioridade, status, categoria, descricao, dataDeTermino));
     }
-
+    public void listarTarefas(){
+        System.out.println(listaDeTarefas);
+    }
 
 }
