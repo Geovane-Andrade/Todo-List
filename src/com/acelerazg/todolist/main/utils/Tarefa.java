@@ -1,19 +1,16 @@
 package com.acelerazg.todolist.main.utils;
 
-import java.lang.Integer;
-import java.lang.String;
-import java.util.Date;
-import java.util.Objects;
+import java.util.*;
 
-public class Tarefa {
+
+public class Tarefa implements Comparator<Tarefa> {
     private String nome;
     private Integer nivelDePrioridade;
     private String status;
     private String categoria;
     private String descricao;
-    private Date dataDeTermino;
-
-    public Tarefa tarefa;
+    private String dataDeTermino;
+    private Tarefa tarefa;
 
     public Tarefa() {
     }
@@ -22,7 +19,7 @@ public class Tarefa {
         this.tarefa = tarefa;
     }
 
-    public Tarefa(String nome, Integer nivelDePrioridade, String status, String categoria, String descricao, Date dataDeTermino) {
+    public Tarefa(String nome, Integer nivelDePrioridade, String status, String categoria, String descricao, String dataDeTermino) {
         this.nome = nome;
         this.nivelDePrioridade = nivelDePrioridade;
         this.status = status;
@@ -71,27 +68,29 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public Date getDataDeTermino() {
+    public String getDataDeTermino() {
         return dataDeTermino;
     }
 
-    public void setDataDeTermino(Date dataDeTermino) {
+    public void setDataDeTermino(String dataDeTermino) {
         this.dataDeTermino = dataDeTermino;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Tarefa tarefa = (Tarefa) o;
-        return Objects.equals(categoria, tarefa.categoria);
+    public String toString() {
+        return "Tarefa{" +
+                "nome='" + nome + '\'' +
+                ", nivelDePrioridade=" + nivelDePrioridade +
+                ", status='" + status + '\'' +
+                ", categoria='" + categoria + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", dataDeTermino='" + dataDeTermino +
+                '}';
     }
 
+
     @Override
-    public int hashCode() {
-        return Objects.hash(categoria);
-    }
-    public void criarTarefa(){
-        Tarefa tarefaCriada = this.tarefa;
+    public int compare(Tarefa tarefa1, Tarefa tarefa2) {
+        return tarefa1.getNivelDePrioridade().compareTo(tarefa2.getNivelDePrioridade());
     }
 }
