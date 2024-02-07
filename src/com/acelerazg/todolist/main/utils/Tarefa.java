@@ -1,6 +1,6 @@
 package com.acelerazg.todolist.main.utils;
 
-import java.util.*;
+import java.util.Comparator;
 
 
 public class Tarefa implements Comparator<Tarefa> {
