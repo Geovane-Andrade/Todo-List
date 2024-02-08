@@ -79,6 +79,10 @@ public class Quadro {
         listaDeTarefas.sort(Comparator.comparing(Tarefa::getNivelDePrioridade ));
         System.out.println(listaDeTarefas);
     }
+    public void listarTarefasPorCategoria() {
+        listaDeTarefas.sort(Comparator.comparing(Tarefa::getCategoria ));
+        System.out.println(listaDeTarefas);
+    }
 
 
 
