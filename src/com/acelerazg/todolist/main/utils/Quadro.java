@@ -1,6 +1,7 @@
 package com.acelerazg.todolist.main.utils;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -75,9 +76,11 @@ public class Quadro {
     }
 
     public void listarTarefasPorPrioridade() {
-        listaDeTarefas.sort(tarefa);
+        listaDeTarefas.sort(Comparator.comparing(Tarefa::getNivelDePrioridade ));
         System.out.println(listaDeTarefas);
     }
+
+
 
     public void removerTarefaPorNome() {
         System.out.println("Qual o nome da tarefa a ser alterada?");

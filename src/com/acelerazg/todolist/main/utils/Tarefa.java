@@ -3,7 +3,7 @@ package com.acelerazg.todolist.main.utils;
 import java.util.Comparator;
 
 
-public class Tarefa implements Comparator<Tarefa> {
+public class Tarefa {
     private String nome;
     private Integer nivelDePrioridade;
     private String status;
@@ -89,8 +89,4 @@ public class Tarefa implements Comparator<Tarefa> {
     }
 
 
-    @Override
-    public int compare(Tarefa tarefa1, Tarefa tarefa2) {
-        return tarefa1.getNivelDePrioridade().compareTo(tarefa2.getNivelDePrioridade());
-    }
 }
