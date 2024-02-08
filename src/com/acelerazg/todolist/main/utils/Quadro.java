@@ -83,6 +83,10 @@ public class Quadro {
         listaDeTarefas.sort(Comparator.comparing(Tarefa::getCategoria ));
         System.out.println(listaDeTarefas);
     }
+    public void listarTarefasPorStatus() {
+        listaDeTarefas.sort(Comparator.comparing(Tarefa::getStatus));
+        System.out.println(listaDeTarefas);
+    }
 
 
 
