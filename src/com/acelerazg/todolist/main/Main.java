@@ -22,9 +22,11 @@ public class Main {
                     "[1] Criar tarefa\n" +
                     "[2] Listar todas as tarefas adicionadas\n" +
                     "[3] Listar tarefas por prioridade\n" +
-                    "[4] Remover tarefa por nome\n" +
-                    "[5] Atualizar tarefa por nome\n" +
-                    "[6] Encerrar programa."
+                    "[4] Listar tarefas por categoria\n" +
+                    "[5] Listar tarefas por status\n" +
+                    "[6] Remover tarefa por nome\n" +
+                    "[7] Atualizar tarefa por nome\n" +
+                    "[8] Encerrar programa."
             );
             int resposta = teclado.nextInt();
             System.out.println("----------------------------------------------");
@@ -42,19 +44,26 @@ public class Main {
                     break;
                 }
                 case 4: {
-                    quadro.removerTarefaPorNome();
+                    quadro.listarTarefasPorCategoria();
                     break;
                 }
                 case 5: {
-                    quadro.atualizarTarefaPorNome();
+                    quadro.listarTarefasPorStatus();
                     break;
                 }
                 case 6: {
+                    quadro.removerTarefaPorNome();
+                    break;
+                }
+                case 7:{
+                    quadro.atualizarTarefaPorNome();
+                    break;
+                }
+                case 8: {
                     reproduz = "n";
                     System.out.println("Encerrando...");
                     break;
                 }
-
                 default: {
                     System.out.println("Digite um número válido.");
                 }
