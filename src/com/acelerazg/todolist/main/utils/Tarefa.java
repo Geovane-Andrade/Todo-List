@@ -10,13 +10,8 @@ public class Tarefa {
     private String categoria;
     private String descricao;
     private String dataDeTermino;
-    private Tarefa tarefa;
 
     public Tarefa() {
-    }
-
-    public Tarefa(Tarefa tarefa) {
-        this.tarefa = tarefa;
     }
 
     public Tarefa(String nome, Integer nivelDePrioridade, String status, String categoria, String descricao, String dataDeTermino) {
