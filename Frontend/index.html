@@ -1,11 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo-List</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+    <header>
+        <h1>Lista de atividades</h1>
+    </header>
+
+    <main>
+
+        <div id="backlog">
+            <h2>Backlog</h2>
+            <ul type="none">
+                <li>Lista de Tarefas</li>
+            </ul>
+
+        </div>
+
+        <div id="todo">
+            <h2>Todo</h2>
+            <ul type="none">
+                <li>Lista de Tarefas</li>
+            </ul>
+        </div>
+
+        <div id="doing">
+            <h2>Doing </h2>
+            <ul type="none">
+                <li>Lista de Tarefas</li>
+            </ul>
+        </div>
+
+        <div id="done">
+            <h2>Done</h2>
+            <ul type="none">
+                <li>Lista de Tarefas</li>
+            </ul>
+        </div>
+
+        <form action="js/script.js" method="post">
+            <p>
+                <label for="size_1">Nome da tarefa: </label>
+                <input type="text">
+            </p>
+
+            <p>
+                <label for="size_1">Descrição: </label>
+                <input type="text">
+            </p>
+
+            <p>
+                <label for="size_1">Data: </label>
+                <input type="date" name="data_termino" id="cadastro_data">
+            </p>
+
+            <p>
+                <label for="size_1"> Nível de prioridade? </label>
+                <input type="radio" name="prioridade" id="prioridade_1">
+                <label for="size_1"> 1</label>
+
+                <input type="radio" name="prioridade" id="prioridade_2">
+                <label for="size_1"> 2</label>
+
+                <input type="radio" name="prioridade" id="prioridade_3">
+                <label for="size_1"> 3</label>
+
+                <input type="radio" name="prioridade" id="prioridade_4">
+                <label for="size_1"> 4</label>
+
+                <input type="radio" name="prioridade" id="prioridade_5">
+                <label for="size_1"> 5</label>
+            </p>
+
+            <p>
+                <label for="size_1"> Qual o status da tarefa? </label>
+                <input type="radio" name="tarefa" id="cadastro_backlog">
+                <label for="size_1"> Backlog</label>
+
+                <input type="radio" name="tarefa" id="cadastro_todo">
+                <label for="size_1"> Todo</label>
+
+                <input type="radio" name="tarefa" id="cadastro_doing">
+                <label for="size_1"> Doing</label>
+
+                <input type="radio" name="tarefa" id="cadastro_done">
+                <label for="size_1"> Done</label>
+            </p>
+        </form>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>
