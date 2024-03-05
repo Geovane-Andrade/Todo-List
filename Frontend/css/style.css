@@ -1,0 +1,84 @@
+main{
+    padding-left: 110px;
+}
+
+h1{
+    text-align: center;
+}
+
+div.status_lista{
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    display: inline-block;
+    padding: auto;
+    margin: 7px;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.315);
+    border-style: solid;
+    border-width: 1px;
+}
+#caixa_maior{
+    padding-left: 285px;
+}
+#caixa_opcoes{
+    text-align: center;
+    width: 700px;
+    height: 400px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    display: inline-block;
+    padding: auto;
+    margin: 7px;
+}
+
+div.caixa_unica{
+    width: 150px;
+    height: 50px;
+    display: inline-block;
+    padding-top: 12px;
+}
+#formulario{
+    text-align: left;
+    width: 500px;
+    height: 275px;
+    padding-left: 150px;
+}
+
+
+#formulario_exclusao{
+    text-align: left;
+    width: 300px;
+    height: 130px;
+    padding-left: 50px;
+    
+}
+#nome_tarefa{
+    width: 130px;
+    
+}
+#descricao_tarefa{
+    width: 165px;
+    padding-bottom: 35px;
+}
+
+#backlog{
+    background-color: aqua;
+}
+
+#todo{
+    background-color: bisque;
+}
+
+#doing{
+    background-color: goldenrod;
+}
+
+#done{
+    background-color: aquamarine;
+}
+
+ul{
+    text-align: left;
+}
