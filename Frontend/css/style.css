@@ -87,6 +87,10 @@ div.caixa_unica{
     background-color: #215A35;
 }
 
+#caixa_unica_exclusao{
+    font-weight: normal;
+}
+
 #formulario{
     text-align: left;
     width: 500px;
