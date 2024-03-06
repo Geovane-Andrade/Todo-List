@@ -14,86 +14,90 @@
     </header>
 
     <main>
-
-        <div class="status_lista">
-            <h2 id="backlog" >Backlog</h2>
-            <ul type="none">
-                <li>Lista de Tarefas</li>
-            </ul>
-
+        <div id="caixa_maior_tarefas">
+            <div class="status_lista">
+                <h2 id="backlog">Backlog</h2>
+                <div class="div_lista">
+                    <ul type="none" id="backlog_lista">
+                        <li>Lista de Tarefas</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="status_lista">
+                <h2 id="todo">Todo</h2>
+                <div class="div_lista">
+                    <ul type="none" id="todo_lista">
+                        <li>Lista de Tarefas</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="status_lista">
+                <h2 id="doing">Doing </h2>
+                <div class="div_lista">
+                    <ul type="none" id="doing_lista">
+                        <li>Lista de Tarefas</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="status_lista">
+                <h2 id="done">Done</h2>
+                <div class="div_lista">
+                    <ul type="none" id="done_lista">
+                        <li>Lista de Tarefas</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        <div  class="status_lista">
-            <h2 id="todo">Todo</h2>
-            <ul type="none">
-                <li>Lista de Tarefas</li>
-            </ul>
-        </div>
-
-        <div class="status_lista">
-            <h2 id="doing" >Doing </h2>
-            <ul type="none">
-                <li>Lista de Tarefas</li>
-            </ul>
-        </div>
-
-        <div class="status_lista">
-            <h2 id="done" >Done</h2>
-            <ul type="none">
-                <li>Lista de Tarefas</li>
-            </ul>
-        </div>
-        
         <div id="caixa_maior">
             <div id="caixa_opcoes">
                 <div id="caixa_conjunto">
-                    <div id="caixa_unica_cadastro" class = "caixa_unica">Criar e Atualizar</div>
-                    <div id="caixa_unica_exclusao" class = "caixa_unica">Excluir  </div>
+                    <div id="caixa_unica_cadastro" class="caixa_unica">Cadastrar</div>
+                    <div id="caixa_unica_exclusao" class="caixa_unica">Excluir</div>
                 </div>
                 <div id="formulario">
-                    <form action="js/script.js" method="post">
+                    <form id="formulario_cadastro">
                         <p>
-                            <label for="nome_tarefa">Nome da tarefa: </label>
-                            <input type="text" id="nome_tarefa">
+                            <label for="nome">Nome da tarefa: </label>
+                            <input type="text" name="nome_tarefa" id="nome">
                         </p>
                         <p>
-                            <label for="descricao_tarefa">Descrição: </label>
-                            <input type="text" id="descricao_tarefa">
+                            <label for="descricao">Descrição: </label>
+                            <input type="text" name="descricao_tarefa" id="descricao">
                         </p>
                         <p>
-                            <label for="cadastro_data">Data de Término: </label>
-                            <input type="date" name="data_termino" id="cadastro_data">
+                            <label for="data">Data de Término: </label>
+                            <input type="date" name="data_termino" id="data">
                         </p>
                         <p>
                             <label for="prioridade_1"> Nível de prioridade? </label>
-                            <input type="radio" name="prioridade" id="prioridade_1">
+                            <input type="radio" name="prioridade" value="1" checked id="prioridade_1">
                             <label for="prioridade_1"> 1</label>
-                            <input type="radio" name="prioridade" id="prioridade_2">
+                            <input type="radio" name="prioridade" value="2" id="prioridade_2">
                             <label for="prioridade_2"> 2</label>
-                            <input type="radio" name="prioridade" id="prioridade_3">
+                            <input type="radio" name="prioridade" value="3" id="prioridade_3">
                             <label for="prioridade_3"> 3</label>
-                            <input type="radio" name="prioridade" id="prioridade_4">
-                            <label for="prioridade_4"> 4</label>
-                            <input type="radio" name="prioridade" id="prioridade_5">
+                            <input type="radio" name="prioridade" value="4" id="prioridade_4">
+                            <label for="prioridade_3"> 4</label>
+                            <input type="radio" name="prioridade" value="5" id="prioridade_5">
                             <label for="prioridade_5"> 5</label>
                         </p>
                         <p>
                             <label for="cadastro_backlog"> Qual o status da tarefa? </label>
-                            <input type="radio" name="tarefa" id="cadastro_backlog">
+                            <input type="radio" name="status" value="backlog" checked id="cadastro_backlog">
                             <label for="cadastro_backlog"> Backlog</label>
-                            <input type="radio" name="tarefa" id="cadastro_todo">
+                            <input type="radio" name="status" value="todo" id="cadastro_todo">
                             <label for="cadastro_todo"> Todo</label>
-                            <input type="radio" name="tarefa" id="cadastro_doing">
+                            <input type="radio" name="status" value="doing" id="cadastro_doing">
                             <label for="cadastro_doing"> Doing</label>
-                            <input type="radio" name="tarefa" id="cadastro_done">
+                            <input type="radio" name="status" value="done" id="cadastro_done">
                             <label for="cadastro_done"> Done</label>
                         </p>
                         <button type="button" id="criar_tarefa">Criar tarefa</button>
-                        <button type="button" id="atualizar_tarefa">Atualizar tarefa</button>
+                        <button type="submit" id="atualizar_tarefa">Atualizar tarefa</button>
                     </form>
                 </div>
             </div>
-            
+
         </div>
 
 

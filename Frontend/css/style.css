@@ -8,7 +8,6 @@ header{
 
 }
 main{
-    padding-left: 110px; 
     background-color: #3A9E5D;
     margin: auto;
 }
@@ -29,6 +28,13 @@ div{
     box-shadow: 0.5px 0.5px 1px 1px #2b413550;
 }
 
+div.div_lista{
+    height: 340px;
+    box-shadow: none;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 div.status_lista{
     text-align: center;
     width: 300px;
@@ -43,17 +49,22 @@ div.status_lista{
 
 ul{
     text-align: left;
+    width: 240px;
+    height: 315px;
     margin: 10px;
     padding-top: 7px;
-    padding-bottom: 315px;
+    padding-bottom: auto;
     border-radius: 3px;
     border-color: #2b413550;
     border-style: solid;
     border-width: 1px;
 }
+#caixa_maior_tarefas{
+    padding: 95px;
+    box-shadow: none;
+}
 #caixa_maior{
-    margin-top: 100px;
-    margin-left: 285px;
+    margin-left: 380px;
     box-shadow: none;
 }
 #caixa_opcoes{
@@ -91,7 +102,7 @@ div.caixa_unica{
     font-weight: normal;
 }
 
-#formulario{
+form{
     text-align: left;
     width: 500px;
     height: 275px;
@@ -101,12 +112,12 @@ div.caixa_unica{
     color: #000000;
 }
 
+#formulario{
+    box-shadow: none;
+}
 
 #formulario_exclusao{
-    text-align: left;
-    width: 300px;
-    height: 130px;
-    padding-left: 50px;
+    padding-top: 75px;
     
 }
 #nome_tarefa{
@@ -136,6 +147,7 @@ div.caixa_unica{
 
 button{
     padding: 8px;
+    margin-left: 5px;
     background-color: #2B4135;
     color: #ffffffce;
     font-size: 18px;
