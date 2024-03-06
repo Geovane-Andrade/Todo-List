@@ -1,9 +1,32 @@
+body{
+    color: #2B4135;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    background-color: #215A35;
+    padding: 15px;
+
+}
 main{
-    padding-left: 110px;
+    padding-left: 110px; 
+    background-color: #3A9E5D;
+    margin: auto;
 }
 
 h1{
     text-align: center;
+    color: #ffffff;
+}
+
+h2{
+    background-color: #FFFFFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+div{
+    box-shadow: 0.5px 0.5px 1px 1px #2b413550;
 }
 
 div.status_lista{
@@ -13,24 +36,41 @@ div.status_lista{
     display: inline-block;
     padding: auto;
     margin: 7px;
-    border-radius: 5px;
-    border-color: rgba(0, 0, 0, 0.315);
+    border-radius: 3px;
+    border-width: 1px;
+    background-color: #ffffffce;
+}
+
+ul{
+    text-align: left;
+    margin: 10px;
+    padding-top: 7px;
+    padding-bottom: 315px;
+    border-radius: 3px;
+    border-color: #2b413550;
     border-style: solid;
     border-width: 1px;
 }
 #caixa_maior{
-    padding-left: 285px;
+    margin-top: 100px;
+    margin-left: 285px;
+    box-shadow: none;
 }
 #caixa_opcoes{
     text-align: center;
     width: 700px;
     height: 400px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
+    border-radius: 3px;
     display: inline-block;
     padding: auto;
     margin: 7px;
+    background-color: #FFFFFF;
+    
+}
+
+#caixa_conjunto{
+    background-color: #2E7C49;
+    
 }
 
 div.caixa_unica{
@@ -38,12 +78,23 @@ div.caixa_unica{
     height: 50px;
     display: inline-block;
     padding-top: 12px;
+    color: #ffffff;
+    border-style: none;
+    font-weight: bold;
 }
+
+#caixa_unica_cadastro{
+    background-color: #215A35;
+}
+
 #formulario{
     text-align: left;
     width: 500px;
     height: 275px;
-    padding-left: 150px;
+    margin-left: 125px;
+    padding: auto;
+    box-shadow: none;
+    color: #000000;
 }
 
 
@@ -64,21 +115,24 @@ div.caixa_unica{
 }
 
 #backlog{
-    background-color: aqua;
+    background-color: #3A9E5D;
 }
 
 #todo{
-    background-color: bisque;
+    background-color: #47C071;
 }
 
 #doing{
-    background-color: goldenrod;
+    background-color: #58EB8C;
 }
 
 #done{
-    background-color: aquamarine;
+    background-color: #54E286;
 }
 
-ul{
-    text-align: left;
+button{
+    padding: 8px;
+    background-color: #2B4135;
+    color: #ffffffce;
+    font-size: 18px;
 }
