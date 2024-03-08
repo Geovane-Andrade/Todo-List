@@ -65,6 +65,7 @@
                         </p>
                         <p>
                             <label for="prioridade_1"> Nível de prioridade? </label>
+                        <p>
                             <input type="radio" name="prioridade" value="1" checked id="prioridade_1">
                             <label for="prioridade_1"> 1</label>
                             <input type="radio" name="prioridade" value="2" id="prioridade_2">
@@ -76,8 +77,10 @@
                             <input type="radio" name="prioridade" value="5" id="prioridade_5">
                             <label for="prioridade_5"> 5</label>
                         </p>
+                        </p>
                         <p>
                             <label for="cadastro_backlog"> Qual o status da tarefa? </label>
+                        <p>
                             <input type="radio" name="status" value="backlog" checked id="cadastro_backlog">
                             <label for="cadastro_backlog"> Backlog</label>
                             <input type="radio" name="status" value="todo" id="cadastro_todo">
@@ -87,14 +90,16 @@
                             <input type="radio" name="status" value="done" id="cadastro_done">
                             <label for="cadastro_done"> Done</label>
                         </p>
+                        </p>
                         <p>
                             <label for="selecao_categoria"> Categoria: </label>
                             <select name="selecao_categoria" id="selecao_categoria">
-                            <option value="Pessoal">Pessoal</option>
-                            <option value="Trabalho">Trabalho</option>
-                            <option value="Estudo">Estudo</option>
-                            <option value="Outro">Outro</option>
-                        </select></p>
+                                <option value="Pessoal">Pessoal</option>
+                                <option value="Trabalho">Trabalho</option>
+                                <option value="Estudo">Estudo</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </p>
                         <button type="button" id="criar_tarefa">Criar tarefa</button>
                     </form>
                 </div>
@@ -105,9 +110,6 @@
 
     </main>
 
-    <footer>
-
-    </footer>
 
     <script src="js/script.js"></script>
 </body>

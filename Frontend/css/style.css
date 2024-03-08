@@ -28,6 +28,10 @@ h3{
     text-align: center;
     font-size: 16px;
 }
+p{
+    white-space: normal;
+    word-wrap: break-word;
+}
 
 div{
     box-shadow: 0.5px 0.5px 1px 1px #2b413550;
@@ -44,11 +48,11 @@ div.div_lista{
 
 div.status_lista{
     text-align: center;
-    width: 340px;
+    width: 350px;
     height: 440px;
     display: inline-block;
     padding: auto;
-    margin: 7px;
+    margin: 5px;
     border-radius: 3px;
     border-width: 1px;
     background-color: #ffffffce;
@@ -68,22 +72,27 @@ li{
     padding: auto;
 }
 #caixa_maior_tarefas{
-    padding: 30px;
+    padding: 15px;
     box-shadow: none;
 }
 #caixa_maior{
-    margin-left: 380px;
+    margin: auto;
+    padding: auto;
     box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #caixa_opcoes{
     text-align: center;
-    width: 700px;
-    height: 400px;
+    width: 385px;
+    height: 425px;
     border-radius: 3px;
     display: inline-block;
     padding: auto;
-    margin: 7px;
+    margin: auto;
     background-color: #FFFFFF;
+    
     
 }
 
@@ -108,9 +117,9 @@ div.caixa_unica{
 
 form{
     text-align: left;
-    width: 500px;
+    width: 475px;
     height: 275px;
-    margin-left: 125px;
+    margin-left: 15px;
     padding: auto;
     box-shadow: none;
     color: #000000;
@@ -118,19 +127,18 @@ form{
 
 #formulario{
     box-shadow: none;
+    margin-top: 25px;
+    padding: auto;
 }
 
-#formulario_exclusao{
-    padding-top: 75px;
-    
-}
+
 #nome_tarefa{
-    width: 130px;
+    width: 125px;
     
 }
+
 #descricao_tarefa{
     width: 165px;
-    padding-bottom: 35px;
 }
 #selecao_categoria{
     font-size: 16px;

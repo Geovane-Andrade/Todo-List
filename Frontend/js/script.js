@@ -6,6 +6,7 @@ document.getElementById("criar_tarefa").onclick = function adicionar_tarefa() {
     var data_termino = document.getElementById("data").value
     var prioridade = document.getElementsByName("prioridade")
     var status = document.getElementsByName("status")
+    var categoria = document.getElementById("selecao_categoria").value
 
     var status_selecionado
     var prioridade_selecionada
@@ -29,8 +30,7 @@ document.getElementById("criar_tarefa").onclick = function adicionar_tarefa() {
         '<h3>Nome: ' + nome + '</h3>' +
         '<p>Descrição: ' + descricao + '</p>' +
         '<p>Data de Término: ' + data_termino + '</p>' +
-
-        '<p>Status: ' + status_selecionado + '</p>' +
+        '<p>Categoria: ' + categoria + '</p>' +
         '<p>Prioridade: ' + prioridade_selecionada + '</p>' +
         '<button class="excluir_tarefa" onclick="remover_tarefa(this)">Remover</button>' +
         '<button class="botao_edicao" onclick="atualizar_tarefa(this)">Editar</button>' +
@@ -70,11 +70,15 @@ function atualizar_tarefa(botao_atualiza) {
     campos.forEach(function (campo) {
         var valor_antigo = campo.innerText.split(':')[1].trim()
         var nome_campo = campo.innerText.split(':')[0].trim()
+        var type = null
+
         if(nome_campo == 'Data de Término'){
-            campo.innerHTML = '<label>' + nome_campo + '<input type="date" value="' + valor_antigo + '"> </label>'
+            type = 'date'
+            
         }else{
-            campo.innerHTML = '<label>' + nome_campo + '<input type="text" value="' + valor_antigo + '"> </label>'
+            type = 'text'
         }
+        campo.innerHTML = '<label>' + nome_campo + `: <input type=${type} value="` + valor_antigo + '"> </label>'
     })
 
     var botaoOk = document.createElement('button');
