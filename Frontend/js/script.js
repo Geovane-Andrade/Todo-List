@@ -1,72 +1,95 @@
-var regiao_cadastro_exclusao = {
-    "Cadastrar": "<div id='formulario'><form id = 'formulario_cadastro'><p><label for='nome_tarefa'>Nome da tarefa: </label><input type='text' id='nome_tarefa'></p><p>    <label for='descricao_tarefa'>Descrição: </label>    <input type='text' id='descricao_tarefa'></p><p>    <label for='cadastro_data'>Data de Término: </label>    <input type='date' name='data_termino' id='cadastro_data'></p><p>    <label for='prioridade_1'> Nível de prioridade? </label>    <input type='radio' name='prioridade' id='prioridade_1'>    <label for='prioridade_1'> 1</label>    <input type='radio' name='prioridade' id='prioridade_2'>    <label for='prioridade_2'> 2</label>    <input type='radio' name='prioridade' id='prioridade_3'>    <label for='prioridade_3'> 3</label>    <input type='radio' name='prioridade' id='prioridade_4'>    <label for='prioridade_4'> 4</label>    <input type='radio' name='prioridade' id='prioridade_5'>    <label for='prioridade_5'> 5</label></p><p>    <label for='cadastro_backlog'> Qual o status da tarefa? </label>    <input type='radio' name='tarefa' id='cadastro_backlog'>    <label for='cadastro_backlog'> Backlog</label>    <input type='radio' name='tarefa' id='cadastro_todo'>    <label for='cadastro_todo'> Todo</label>    <input type='radio' name='tarefa' id='cadastro_doing'>    <label for='cadastro_doing'> Doing</label>    <input type='radio' name='tarefa' id='cadastro_done'>    <label for='cadastro_done'> Done</label></p><button type='button' id='criar_tarefa'>Criar tarefa</button><button type='button' id='atualizar_tarefa'>Atualizar tarefa</button></form>",
-    "Excluir": "<form action='js/script.js' method='post' id ='formulario_exclusao'><p><label for='tarefa_para_excluir'>Nome da tarefa à excluir:   </label><input type='text' id='nome_tarefa_para_excluir'></p><p><p>    <label for='cadastro_backlog'> Status da tarefa:  </label>    <input type='radio' name='tarefa' id='cadastro_backlog'>    <label for='cadastro_backlog'> Backlog</label>    <input type='radio' name='tarefa' id='cadastro_todo'>    <label for='cadastro_todo'> Todo</label>    <input type='radio' name='tarefa' id='cadastro_doing'>    <label for='cadastro_doing'> Doing</label>    <input type='radio' name='tarefa' id='cadastro_done'>    <label for='cadastro_done'> Done</label></p><button type='button' id='deletar_tarefa'>Deletar tarefa</button></form>"
-};
 
-var cor_nao_selecionada = "#2E7C49"
-var cor_selecionada = "#215A35"
+document.getElementById("criar_tarefa").onclick = function adicionar_tarefa() {
 
-var caixa_selecionada = document.getElementsByClassName("caixa_unica")
-
-for (var i = 0; i < caixa_selecionada.length; i++) {
-
-    caixa_selecionada[i].onclick = function () {
-
-        for (var j = 0; j < caixa_selecionada.length; j++) {
-            caixa_selecionada[j].style["background-color"] = cor_nao_selecionada;
-            caixa_selecionada[j].style["font-weight"] = "normal";
-        }
-
-        this.style["background-color"] = cor_selecionada;
-        this.style["font-weight"] = "bold";
-
-
-        var selecionado = this.innerHTML;
-
-        document.getElementById("formulario").innerHTML = regiao_cadastro_exclusao[selecionado];
-    }
-}
-
-const formulario = document.getElementById("formulario_cadastro")
-const formData = new FormData(formulario)
-
-document.getElementById("criar_tarefa").onclick = function () {
-
+    var nome = document.getElementById("nome_tarefa").value
+    var descricao = document.getElementById("descricao_tarefa").value
+    var data_termino = document.getElementById("data").value
+    var prioridade = document.getElementsByName("prioridade")
     var status = document.getElementsByName("status")
 
     var status_selecionado
+    var prioridade_selecionada
 
-    for (var i = 0; i < status.length; i++) {
+    for (let i = 0; i < status.length; i++) {
         if (status[i].checked) {
             status_selecionado = status[i].value
             break;
         }
     }
 
-    adionar_a_lista(status_selecionado)
+    for (let i = 0; i < prioridade.length; i++) {
+        if (prioridade[i].checked) {
+            prioridade_selecionada = prioridade[i].value
+            break;
+        }
+    }
 
-}
 
-function adionar_a_lista( status_salvar) {
+    var tarefaHtml = '<div class="tarefa">' +
+        '<h3>Nome: ' + nome + '</h3>' +
+        '<p>Descrição: ' + descricao + '</p>' +
+        '<p>Data de Término: ' + data_termino + '</p>' +
 
-    switch (status_salvar) {
+        '<p>Status: ' + status_selecionado + '</p>' +
+        '<p>Prioridade: ' + prioridade_selecionada + '</p>' +
+        '<button class="excluir_tarefa" onclick="remover_tarefa(this)">Remover</button>' +
+        '<button class="botao_edicao" onclick="atualizar_tarefa(this)">Editar</button>' +
+        '</div>';
+
+    switch (status_selecionado) {
 
         case "backlog": {
-            document.getElementById("backlog_lista").innerHTML += "<li>" + status_salvar + "</li>"
-            
+
+            document.getElementById("backlog_lista").innerHTML += tarefaHtml
             break;
         }
         case "todo": {
-
+            document.getElementById("todo_lista").innerHTML += tarefaHtml
             break;
         }
         case "doing": {
 
+            document.getElementById("doing_lista").innerHTML += tarefaHtml
             break;
         }
         case "done": {
-
+            document.getElementById("done_lista").innerHTML += tarefaHtml
             break;
         }
     }
 }
+
+function remover_tarefa(botao_remove) {
+    botao_remove.parentNode.remove()
+}
+
+function atualizar_tarefa(botao_atualiza) {
+    var tarefa = botao_atualiza.parentNode
+    var campos = tarefa.querySelectorAll('h3, p')
+
+    campos.forEach(function (campo) {
+        var valor_antigo = campo.innerText.split(':')[1].trim()
+        var nome_campo = campo.innerText.split(':')[0].trim()
+        if(nome_campo == 'Data de Término'){
+            campo.innerHTML = '<label>' + nome_campo + '<input type="date" value="' + valor_antigo + '"> </label>'
+        }else{
+            campo.innerHTML = '<label>' + nome_campo + '<input type="text" value="' + valor_antigo + '"> </label>'
+        }
+    })
+
+    var botaoOk = document.createElement('button');
+        botaoOk.innerText = 'Ok!';
+        botaoOk.onclick = function() {
+            campos.forEach(function(campo) {
+                var nome_campo = campo.innerText.split(':')[0].trim()
+                campo.innerHTML = nome_campo +  ': ' + campo.querySelector('input').value ;
+            });
+            tarefa.appendChild(botao_atualiza); 
+            botaoOk.remove(); 
+        };
+        
+        tarefa.appendChild(botaoOk); 
+        botao_atualiza.remove();
+
+}
+

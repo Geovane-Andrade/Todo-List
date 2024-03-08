@@ -19,7 +19,6 @@
                 <h2 id="backlog">Backlog</h2>
                 <div class="div_lista">
                     <ul type="none" id="backlog_lista">
-                        <li>Lista de Tarefas</li>
                     </ul>
                 </div>
             </div>
@@ -27,7 +26,6 @@
                 <h2 id="todo">Todo</h2>
                 <div class="div_lista">
                     <ul type="none" id="todo_lista">
-                        <li>Lista de Tarefas</li>
                     </ul>
                 </div>
             </div>
@@ -35,7 +33,6 @@
                 <h2 id="doing">Doing </h2>
                 <div class="div_lista">
                     <ul type="none" id="doing_lista">
-                        <li>Lista de Tarefas</li>
                     </ul>
                 </div>
             </div>
@@ -43,7 +40,6 @@
                 <h2 id="done">Done</h2>
                 <div class="div_lista">
                     <ul type="none" id="done_lista">
-                        <li>Lista de Tarefas</li>
                     </ul>
                 </div>
             </div>
@@ -52,17 +48,16 @@
             <div id="caixa_opcoes">
                 <div id="caixa_conjunto">
                     <div id="caixa_unica_cadastro" class="caixa_unica">Cadastrar</div>
-                    <div id="caixa_unica_exclusao" class="caixa_unica">Excluir</div>
                 </div>
                 <div id="formulario">
                     <form id="formulario_cadastro">
                         <p>
                             <label for="nome">Nome da tarefa: </label>
-                            <input type="text" name="nome_tarefa" id="nome">
+                            <input type="text" name="nome_tarefa" id="nome_tarefa">
                         </p>
                         <p>
                             <label for="descricao">Descrição: </label>
-                            <input type="text" name="descricao_tarefa" id="descricao">
+                            <input type="text" name="descricao_tarefa" id="descricao_tarefa">
                         </p>
                         <p>
                             <label for="data">Data de Término: </label>
@@ -92,8 +87,15 @@
                             <input type="radio" name="status" value="done" id="cadastro_done">
                             <label for="cadastro_done"> Done</label>
                         </p>
+                        <p>
+                            <label for="selecao_categoria"> Categoria: </label>
+                            <select name="selecao_categoria" id="selecao_categoria">
+                            <option value="Pessoal">Pessoal</option>
+                            <option value="Trabalho">Trabalho</option>
+                            <option value="Estudo">Estudo</option>
+                            <option value="Outro">Outro</option>
+                        </select></p>
                         <button type="button" id="criar_tarefa">Criar tarefa</button>
-                        <button type="submit" id="atualizar_tarefa">Atualizar tarefa</button>
                     </form>
                 </div>
             </div>
